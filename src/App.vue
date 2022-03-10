@@ -1,28 +1,28 @@
-<template>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+      <p>Try Element</p>
+    </el-dialog>
   </div>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+  </script>
+</html>
